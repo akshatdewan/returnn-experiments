@@ -3,7 +3,7 @@
 set -ex
 
 mydir=$(pwd)
-cd data/dataset
+cd data/dataset_cased
 
 test -s stats.mean.txt && test -s stats.std_dev.txt && echo "stats.*.txt files already exist, exit" && exit
 
@@ -11,8 +11,11 @@ test -s stats.mean.txt && test -s stats.std_dev.txt && echo "stats.*.txt files a
 # Takes around 10h for me.
 # bpe stuff not really needed here, just to make it load.
 
+#$mydir/returnn/tools/dump-dataset.py \
+#  "{'class':'LibriSpeechCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': True, 'seq_ordering':'random'}" \
+#  --endseq -1 --type null --dump_stats stats
 $mydir/returnn/tools/dump-dataset.py \
-  "{'class':'LibriSpeechCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': True, 'seq_ordering':'random'}" \
+  "{'class':'LibriWipoEUCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': False, 'seq_ordering':'random'}" \
   --endseq -1 --type null --dump_stats stats
 
 test -s stats.mean.txt && test -s stats.std_dev.txt

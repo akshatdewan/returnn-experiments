@@ -17,8 +17,10 @@ args = argparser.parse_args()
 exp_dir = "data/exp-%s" % args.experiment
 assert os.path.exists(exp_dir)
 
-datasets = ["dev-clean", "dev-other", "test-clean", "test-other"]
-dev_dataset = "dev-other"
+#datasets = ["dev-clean", "dev-other", "test-clean", "test-other"]
+#dev_dataset = "dev-other"
+datasets = ["dev"]
+dev_dataset = "dev"
 # Files via tools/search.py script.
 files = glob("%s/search.%s.*.beam%i.recog.scoring.wer" % (exp_dir, dev_dataset, args.beam_size))
 assert files, "no recog done yet?"

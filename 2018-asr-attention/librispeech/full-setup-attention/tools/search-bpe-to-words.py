@@ -9,10 +9,10 @@ def main():
     argparser.add_argument("file", help="by Returnn search, in 'py' format")
     argparser.add_argument("--out", required=True, help="output filename")
     args = argparser.parse_args()
-    d = eval(open(args.file, "r").read())
+    d = eval(open(args.file, "r",encoding='utf-8').read())
     assert isinstance(d, dict)  # seq_tag -> bpe string
     assert not os.path.exists(args.out)
-    with open(args.out, "w") as out:
+    with open(args.out, "w",encoding='utf-8') as out:
         out.write("{\n")
         for seq_tag, txt in sorted(d.items()):
             if isinstance(txt, list):
