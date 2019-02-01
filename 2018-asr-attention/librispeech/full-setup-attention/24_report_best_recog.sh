@@ -4,4 +4,4 @@ set -exv
 
 # select recog based on best dev-other
 
-./tools/report-best-recog.py
+./tools/report-best-recog.py --experiment dev-cased
