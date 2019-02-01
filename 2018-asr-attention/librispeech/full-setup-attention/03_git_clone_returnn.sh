@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git clone https://github.com/rwth-i6/returnn.git
+git clone https://github.com/akshatdewan/returnn.git
