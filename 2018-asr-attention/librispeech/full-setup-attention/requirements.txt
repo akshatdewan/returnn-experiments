@@ -1,3 +1,4 @@
+pysoundfile
 librosa
 numpy
 h5py
