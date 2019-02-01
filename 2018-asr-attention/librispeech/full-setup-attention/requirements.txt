@@ -1,4 +1,3 @@
-better_exchook
 numpy
 h5py
 tensorflow-gpu
