@@ -2,5 +2,5 @@ pysoundfile
 librosa
 numpy
 h5py
-tensorflow-gpu
+tensorflow-gpu==1.12.0
 theano==0.9
