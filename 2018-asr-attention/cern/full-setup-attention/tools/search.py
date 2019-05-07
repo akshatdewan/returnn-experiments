@@ -100,13 +100,13 @@ if os.path.exists(recog_words_file):
     os.remove(recog_words_file)
 run(["tools/search-bpe-to-words.py", recog_bpe_file, "--out", recog_words_file])
 
-run([
-    default_python_bin,
-    "%s/tools/calculate-word-error-rate.py" % returnn_dir_name,
-    "--expect_full",
-    "--hyps", recog_words_file,
-    "--refs", "data/dataset/%s.trans.raw" % args.data,
-    "--out", recog_wer_file,
-    ])
+#run([
+#    default_python_bin,
+#    "%s/tools/calculate-word-error-rate.py" % returnn_dir_name,
+#    "--expect_full",
+#    "--hyps", recog_words_file,
+#    "--refs", "data/dataset/%s.trans.raw" % args.data,
+#    "--out", recog_wer_file,
+#    ])
 
 print("elapsed time: %s" % (time.time() - start_time))
