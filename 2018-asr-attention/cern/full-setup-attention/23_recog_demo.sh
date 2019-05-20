@@ -10,6 +10,10 @@ if [[ $asr_type = cern_asr ]] #v1
 then
   experiment=cern_asr
 fi
+if [[ $asr_type = cern2_asr ]] #v1
+then
+  experiment=cern2_asr
+fi
 test -e data/exp-$experiment  # experiment existing?
 #test -e data/exp-$experiment/train-scores.data  # some epochs trained?
 
@@ -20,6 +24,10 @@ extra_args="-- ++batch_size 10000"  # such that it fits on your GPU
 if [[ $asr_type = cern_asr ]] #v1
 then
   epochs=232
+fi
+if [[ $asr_type = cern2_asr ]] #v1
+then
+  epochs=235
 fi
 
 for epoch in $epochs; do
