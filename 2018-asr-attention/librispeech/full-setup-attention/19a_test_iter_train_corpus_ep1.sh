@@ -10,4 +10,5 @@ set -exv
 # 353/822, 0:00:04 [|||....]
 
 #./returnn/tools/dump-dataset.py returnn.config --endseq -1 --type null
-./returnn/tools/dump-dataset.py uncased_asr.config --endseq -1 --type null
+#./returnn/tools/dump-dataset.py uncased_asr.config --endseq -1 --type null
+./returnn/tools/dump-dataset.py cased_cern_eu_libri_unog_unesco_wipo_asr.config --endseq -1 --type null
