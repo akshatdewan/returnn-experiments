@@ -5,7 +5,7 @@ set -exv
 
 #for prefix in dev-clean dev-other test-clean test-other train-clean train-other; do
 #for prefix in test; do
-for prefix in train dev; do
+for prefix in  dev_cern dev_unog dev_unesco; do
     if test -s data/dataset_cased_cern_eu_libri_unesco_unog_wipo/$prefix.trans.raw; then
       echo "$prefix exists already"
       continue

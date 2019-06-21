@@ -21,5 +21,5 @@ extra_args="-- ++batch_size 10000"  # such that it fits on your GPU
 # We start with the longest ones, to make sure the memory is enough.
 for epoch in $epochs; do
   echo "recog of epoch $epoch"
-  ./tools/search.py $experiment $epoch --data dev  $extra_args
+  ./tools/search.py $experiment $epoch --data dev_cern  $extra_args
 done

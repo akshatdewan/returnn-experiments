@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+#/usr/bin/env  PYTHONIOENCODING=utf-8:surrogateescape python3
+
 import better_exchook
 better_exchook.install()
 
