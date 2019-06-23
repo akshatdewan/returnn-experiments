@@ -105,13 +105,13 @@ run(["tools/search-bpe-to-words.py", recog_bpe_file, "--out", recog_words_file])
 
 dataset="data/dataset_%s" %config_fn.replace('_asr.config','')
 
-run([
-    default_python_bin,
-    "%s/tools/calculate-word-error-rate.py" % returnn_dir_name,
-    "--expect_full",
-    "--hyps", recog_words_file,
-    "--refs", "%s/%s.trans.raw" % (dataset,args.data),
-    "--out", recog_wer_file,
-    ])
+#run([
+#    default_python_bin,
+#    "%s/tools/calculate-word-error-rate.py" % returnn_dir_name,
+#    "--expect_full",
+#    "--hyps", recog_words_file,
+#    "--refs", "%s/%s.trans.raw" % (dataset,args.data),
+#    "--out", recog_wer_file,
+#    ])
 
 print("elapsed time: %s" % (time.time() - start_time))
