@@ -8,4 +8,5 @@ set -exv
 # That directory can also be monitored by TensorBoard.
 
 #./returnn/rnn.py cased2_asr_multigpu.config
-./returnn/rnn.py cased_cern_eu_libri_unesco_unog_wipo_asr.config
+#./returnn/rnn.py cased_cern_eu_libri_unesco_unog_wipo_asr.config
+CUDA_VISIBLE_DEVICES=4 ./returnn/rnn.py cased_cern_eu_libri_unesco_unog_wipo_asr_domain_embedding_v2.config
