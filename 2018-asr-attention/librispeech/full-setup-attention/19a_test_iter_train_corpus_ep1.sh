@@ -11,4 +11,5 @@ set -exv
 
 #./returnn/tools/dump-dataset.py returnn.config --endseq -1 --type null
 #./returnn/tools/dump-dataset.py uncased_asr.config --endseq -1 --type null
-./returnn/tools/dump-dataset.py cased_cern_eu_libri_unog_unesco_wipo_asr.config --endseq -1 --type null
+#./returnn/tools/dump-dataset.py cased_cern_eu_libri_unog_unesco_wipo_asr.config --endseq -1 --type null
+./returnn/tools/dump-dataset.py wipo.base2.conv2l.specaug.curric3.config --endseq -1 --type null
