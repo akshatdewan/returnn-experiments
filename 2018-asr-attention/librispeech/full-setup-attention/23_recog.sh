@@ -8,7 +8,7 @@ set -exv
 #experiment=cased_cern_eu_libri_unesco_unog_wipo_asr
 #experiment=cased2_asr
 #experiment=cased_cern_eu_libri_unesco_unog_wipo_asr
-experiment=cased_libri_asr
+experiment=wipo.base2.conv2l.specaug.curric3
 #test -e data/exp-$experiment  # experiment existing?
 #experiment=attention-lm
 #test -e data/exp-$experiment  # experiment existing?
@@ -16,7 +16,8 @@ experiment=cased_libri_asr
 # Get us some recommended epochs to do recog on.
 #epochs=$(./tools/recommend-recog-epochs.py --experiment $experiment)
 #epochs=$(./tools/recommend-recog-epochs.py --experiment $experiment)
-epochs=201
+#epochs=201 #cased_libri
+epochs=28
 extra_args="-- ++batch_size 5000"  # such that it fits on your GPU
 #epochs=180
 #extra_args="-- ++batch_size 5000"  # such that it fits on your GPU
@@ -28,5 +29,5 @@ extra_args="-- ++batch_size 5000"  # such that it fits on your GPU
 # We start with the longest ones, to make sure the memory is enough.
 for epoch in $epochs; do
   echo "recog of epoch $epoch"
-  CUDA_VISIBLE_DEVICES=3 ./tools/search.py $experiment $epoch --data train  $extra_args
+  CUDA_VISIBLE_DEVICES=0 ./tools/search.py $experiment $epoch --data dev  $extra_args
 done
