@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pip3 install --user -r requirements_tf13.txt
+pip3 install -r requirements_tf13.txt
 
