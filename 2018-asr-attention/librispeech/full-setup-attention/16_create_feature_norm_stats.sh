@@ -20,8 +20,14 @@ test -s stats.mean.txt && test -s stats.std_dev.txt && echo "stats.*.txt files a
 #  "{'class':'LibriWipoEUCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': False, 'seq_ordering':'random'}" \
 #  --endseq -1 --type null --dump_stats stats
 
+#$mydir/returnn/tools/dump-dataset.py \
+#  "{'class':'CernEULibriUnescoUnogWipoCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': False, 'seq_ordering':'random'}" \
+#  --endseq -1 --type null --dump_stats stats
+
+#test -s stats.mean.txt && test -s stats.std_dev.txt
+
 $mydir/returnn/tools/dump-dataset.py \
-  "{'class':'CernEULibriUnescoUnogWipoCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': False, 'seq_ordering':'random'}" \
+  "{'class':'ruOpenSttCorpus', 'bpe':{'bpe_file':'trans.bpe.codes', 'vocab_file':'trans.bpe.vocab', 'unknown_label':'<unk>'}, 'path':'.', 'audio':{}, 'prefix': 'train', 'use_zip': False, 'seq_ordering':'random'}" \
   --endseq -1 --type null --dump_stats stats
 
 test -s stats.mean.txt && test -s stats.std_dev.txt

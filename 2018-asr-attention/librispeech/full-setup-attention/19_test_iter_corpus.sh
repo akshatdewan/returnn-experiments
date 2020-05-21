@@ -15,6 +15,9 @@ set -exv
 #./returnn/tools/dump-dataset.py \
 #  "{'class':'CernEULibriUnescoUnogWipoCorpus', 'bpe':{'bpe_file':'data/dataset_cased_cern_eu_libri_unesco_unog_wipo/trans.bpe.codes', 'vocab_file':'data/dataset_cased_cern_eu_libri_unesco_unog_wipo/trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'data/dataset_cased_cern_eu_libri_unesco_unog_wipo', 'audio':{'norm_mean':'data/dataset_cased_cern_eu_libri_unesco_unog_wipo/stats.mean.txt', 'norm_std_dev':'data/dataset_cased_cern_eu_libri_unesco_unog_wipo/stats.std_dev.txt'}, 'prefix': 'dev', 'use_zip': False}" \
 #  --endseq -1 --type null
+#./returnn/tools/dump-dataset.py \
+#  "{'class':'SpecAugCernEULibriUnescoUnogWipoCorpus', 'bpe':{'bpe_file':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/trans.bpe.codes', 'vocab_file':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo', 'audio':{'norm_mean':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/stats.mean.txt', 'norm_std_dev':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/stats.std_dev.txt'}, 'prefix': 'dev', 'use_zip': False}" \
+#  --endseq -1 --type null
 ./returnn/tools/dump-dataset.py \
-  "{'class':'SpecAugCernEULibriUnescoUnogWipoCorpus', 'bpe':{'bpe_file':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/trans.bpe.codes', 'vocab_file':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/trans.bpe.vocab', 'unknown_label':'unk'}, 'path':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo', 'audio':{'norm_mean':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/stats.mean.txt', 'norm_std_dev':'data/dataset_specaug_cased_cern_eu_libri_unesco_unog_wipo/stats.std_dev.txt'}, 'prefix': 'dev', 'use_zip': False}" \
+"{'class':'ruOpenSttCorpus', 'bpe':{'bpe_file':'data/dataset_ru/trans.bpe.codes', 'vocab_file':'data/dataset_ru/trans.bpe.vocab','unknown_label':'<unk>'}, 'path':'data/dataset_ru', 'audio':{'norm_mean':'data/dataset_ru/stats.mean.txt', 'norm_std_dev':'data/dataset_ru/stats.std_dev.txt'}, 'prefix': 'dev', 'use_zip': False}"\
   --endseq -1 --type null
