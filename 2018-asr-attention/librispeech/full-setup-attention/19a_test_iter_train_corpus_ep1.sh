@@ -15,3 +15,4 @@ set -exv
 #./returnn/tools/dump-dataset.py wipo.base2.conv2l.specaug.curric3.config --endseq -1 --type null
 ./returnn/tools/dump-dataset.py ru.config --endseq -1 --type null
 #./returnn/tools/dump-dataset.py base2.conv2l.specaug.curric3.config --epoch 4 --endseq -1 --type null
+#./returnn/tools/dump-dataset.py fr_cv_euparl-st_ilo.config --endseq -1 --type null
