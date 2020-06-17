@@ -1,0 +1,7 @@
+pysoundfile
+librosa==0.6.3
+numpy
+h5py
+tensorflow-gpu==2.2.0
+better_exchook
+theano==0.9
