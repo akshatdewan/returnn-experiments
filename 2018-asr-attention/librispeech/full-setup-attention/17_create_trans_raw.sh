@@ -16,10 +16,19 @@ set -exv
 #
 #done
 
-for prefix in train dev; do
-    if test -s data/dataset_ru/$prefix.trans.raw; then
+#for prefix in train dev; do
+#    if test -s data/dataset_ru/$prefix.trans.raw; then
+#      echo "$prefix exists already"
+#    continue
+#    fi
+#    ./returnn/tools/dump-dataset-raw-strings.py --dataset "{'class':'ruOpenSttCorpus', 'bpe':{'bpe_file':'data/dataset_ru/trans.bpe.codes', 'vocab_file':'data/dataset_ru/trans.bpe.vocab','unknown_label':'<unk>'}, 'path':'data/dataset_ru', 'audio':{}, 'prefix': '$prefix', 'use_zip': False}" --out data/dataset_ru/$prefix.trans.raw
+#done
+
+for prefix in demo; do
+    if test -s data/dataset_fr_cv_euparl-st_ilo/$prefix.trans.raw; then
       echo "$prefix exists already"
     continue
     fi
-    ./returnn/tools/dump-dataset-raw-strings.py --dataset "{'class':'ruOpenSttCorpus', 'bpe':{'bpe_file':'data/dataset_ru/trans.bpe.codes', 'vocab_file':'data/dataset_ru/trans.bpe.vocab','unknown_label':'<unk>'}, 'path':'data/dataset_ru', 'audio':{}, 'prefix': '$prefix', 'use_zip': False}" --out data/dataset_ru/$prefix.trans.raw
+    ./returnn/tools/dump-dataset-raw-strings.py --dataset "{'class':'SpecAugFrCorpus', 'bpe':{'bpe_file':'data/dataset_fr_cv_euparl-st_ilo/trans.bpe.codes', 'vocab_file':'data/dataset_fr_cv_euparl-st_ilo/trans.bpe.vocab','unknown_label':'<unk>'}, 'path':'data/dataset_fr_cv_euparl-st_ilo', 'audio':{}, 'prefix': '$prefix', 'use_zip': False}" --out data/dataset_fr_cv_euparl-st_ilo/$prefix.trans.raw
 done
+
