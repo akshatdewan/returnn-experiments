@@ -5,3 +5,5 @@ h5py
 tensorflow-gpu==2.2.0
 better_exchook
 theano==0.9
+six==1.12.0
+setuptools==41.0.0
