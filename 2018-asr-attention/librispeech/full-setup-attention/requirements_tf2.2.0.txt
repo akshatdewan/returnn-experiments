@@ -1,8 +1,9 @@
 pysoundfile
 librosa==0.6.3
-numpy
+numpy==1.17.4
 numba==0.48
-h5py
+scipy==1.4.1
+h5py==2.10.0
 tensorflow-gpu==2.2.0
 better_exchook
 theano==0.9
