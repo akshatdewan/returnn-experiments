@@ -6,7 +6,13 @@ set -exv
 # Use 31b_demo.sh to record and recog something.
 
 #epoch=$(./tools/report-best-recog.py --experiment $experiment --print_epoch_only)
-mode=$1
+default_port=12380
+default_msglen=80000
+default_mode=long_segs
+mode=${1:-$default_mode}
+msglen=${2:-$default_msglen}
+port=${3:-$default_port}
+
 echo $mode
 if [[ $mode == long_segs ]]
 then
@@ -18,4 +24,4 @@ then
     experiment=5s_segs
     epoch=250
 fi
-./returnn/rnn.py $experiment.config --task search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output
+./returnn/rnn.py $experiment.config --task search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
