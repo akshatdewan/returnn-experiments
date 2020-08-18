@@ -9,8 +9,9 @@ set -exv
 #experiment=cased2_asr
 #experiment=cased_cern_eu_libri_unesco_unog_wipo_asr
 #experiment=wipo.base2.conv2l.specaug.curric3
-experiment=fr_cv_euparl-st_ilo
+#experiment=fr_cv_euparl-st_ilo
 #experiment=ru
+experiment=cased_cern_eu_ilo_libri_unesco_unog_wipo_sp
 
 # Get us some recommended epochs to do recog on.
 #epochs=$(./tools/recommend-recog-epochs.py --experiment $experiment)
@@ -19,7 +20,8 @@ experiment=fr_cv_euparl-st_ilo
 #epochs=180 # cased2_asr
 #epochs=168 #cased_cern_eu_libri_unesco_unog_wipo_asr
 #epochs=224 #ru
-epochs=250 #fr_cv_euparl-st_ilo
+#epochs=250 #fr_cv_euparl-st_ilo
+epochs=218 #cased_cern_eu_ilo_libri_unesco_unog_wipo_sp
 extra_args="-- ++batch_size 8000"  # such that it fits on your GPU
 
 # In recog, sequences are sorted by length, to optimize the batch search padding.
