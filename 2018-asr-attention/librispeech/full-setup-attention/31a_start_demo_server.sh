@@ -16,12 +16,15 @@ port=${3:-$default_port}
 echo $mode
 if [[ $mode == long_segs ]]
 then
-    experiment=cased2_asr
-    epoch=180
+    #experiment=cased2_asr
+    #epoch=180
+    experiment=cased_cern_eu_libri_unesco_unog_wipo_asr
+    epoch=168
 fi
+
 if [[ $mode == short_segs ]]
 then
     experiment=5s_segs
     epoch=250
 fi
-CUDA_VISIBLE_DEVICES=2 ./returnn/rnn.py $experiment.config --task search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
+CUDA_VISIBLE_DEVICES=3 ./returnn/rnn.py $experiment.config --task search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
