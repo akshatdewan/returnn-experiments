@@ -27,4 +27,6 @@ then
     experiment=5s_segs
     epoch=250
 fi
-CUDA_VISIBLE_DEVICES=3 ./returnn/rnn.py $experiment.config --task search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
+CUDA_VISIBLE_DEVICES=3 ./returnn/rnn.py $experiment.config --task streaming_search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
+#CUDA_VISIBLE_DEVICES=3 ./returnn/rnn.py $experiment.config --task batch_search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
+#CUDA_VISIBLE_DEVICES=3 ./returnn/rnn.py $experiment.config --task single_search_server ++load_epoch $epoch ++need_data 0 ++search_output_layer output ++port $port ++msglen $msglen
