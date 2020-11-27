@@ -1,0 +1,11 @@
+pysoundfile
+librosa==0.6.3
+numpy==1.17.4
+numba==0.48
+scipy==1.4.1
+h5py==2.10.0
+tensorflow==2.2.0
+better_exchook
+theano==0.9
+six==1.12.0
+setuptools==41.0.0
