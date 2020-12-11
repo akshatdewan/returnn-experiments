@@ -22,11 +22,12 @@ experiment=cased_cern_eu_ilo_libri_unesco_unog_wipo_sp
 #epochs=224 #ru
 #epochs=250 #fr_cv_euparl-st_ilo
 epochs=218 #cased_cern_eu_ilo_libri_unesco_unog_wipo_sp
-extra_args="-- ++batch_size 8000"  # such that it fits on your GPU
+extra_args="-- ++batch_size 16000"  # such that it fits on your GPU
 
 # In recog, sequences are sorted by length, to optimize the batch search padding.
 # We start with the longest ones, to make sure the memory is enough.
 for epoch in $epochs; do
   echo "recog of epoch $epoch"
-  CUDA_VISIBLE_DEVICES=3 ./tools/search.py $experiment $epoch --data demo  $extra_args
+  #CUDA_VISIBLE_DEVICES=3 ./tools/search.py $experiment $epoch --data demo  --search_output_layer ctc  $extra_args
+  CUDA_VISIBLE_DEVICES=3 ./tools/search.py $experiment $epoch --data demo $extra_args
 done
